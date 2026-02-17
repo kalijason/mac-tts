@@ -70,13 +70,14 @@ def voices():
 
 
 def main():
+    global DEFAULT_VOICE
+    
     parser = argparse.ArgumentParser(description="Mac TTS HTTP API Server")
     parser.add_argument("-p", "--port", type=int, default=DEFAULT_PORT, help="Port to listen on")
     parser.add_argument("-v", "--voice", default=DEFAULT_VOICE, help="Default voice")
     parser.add_argument("--host", default="0.0.0.0", help="Host to bind to")
     args = parser.parse_args()
 
-    global DEFAULT_VOICE
     DEFAULT_VOICE = args.voice
 
     print(f"🔊 Mac TTS API starting on http://{args.host}:{args.port}")

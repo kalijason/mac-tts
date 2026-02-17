@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mac-tts"
+version = "1.0.0"
+description = "macOS TTS HTTP API server using native say command"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Jason", email = "kalijason@users.noreply.github.com"}]
+requires-python = ">=3.9"
+dependencies = [
+    "flask>=2.0.0",
+]
+
+[project.scripts]
+mac-tts = "mac_tts:main"
+
+[tool.setuptools]
+py-modules = ["mac_tts"]
